@@ -1,0 +1,4 @@
+package gotalk
+
+func main() {
+}
