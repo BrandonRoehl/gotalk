@@ -1,4 +1,5 @@
 package gotalk
 
-func main() {
+// GoTalk test for go doc
+func GoTalk() {
 }
