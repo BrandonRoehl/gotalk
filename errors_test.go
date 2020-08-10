@@ -11,13 +11,11 @@ func ExampleErrors_wrapping() {
 	i := errors.New("this is an error")
 	j := fmt.Errorf("this error wraps error %w", i)
 
-	if errors.Is(j, i) {
-		fmt.Println("Error inheritance")
-	}
+	fmt.Println(errors.Is(j, i))
 
 	// Output:
 	//
-	// Error inheritance
+	// true
 }
 
 func ExampleErrors_returnErrors() {
