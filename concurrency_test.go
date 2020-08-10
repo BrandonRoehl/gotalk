@@ -15,7 +15,7 @@ var urls = []string{
 	"http://brandonroehl.org/",
 }
 
-func Example_serial() {
+func ExampleConcurrency_serial() {
 	for _, url := range urls {
 		// Fetch the URL.
 		http.Get(url)
@@ -24,11 +24,11 @@ func Example_serial() {
 
 func BenchmarkSerial(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Example_serial()
+		ExampleConcurrency_serial()
 	}
 }
 
-func Example_goRutines() {
+func ExampleConcurrency_goRutines() {
 	var wg sync.WaitGroup
 	for _, url := range urls {
 		wg.Add(1)
@@ -46,11 +46,11 @@ func Example_goRutines() {
 
 func BenchmarkGoRutines(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Example_goRutines()
+		ExampleConcurrency_goRutines()
 	}
 }
 
-func Example_mutex() {
+func ExampleConcurrency_mutex() {
 	// Inline functions are just used for viewing with godoc
 	fibonacci := func(n int) int {
 		x, y := 0, 1
@@ -80,7 +80,7 @@ func Example_mutex() {
 	// The 10th fibonacci number is 34
 }
 
-func Example_channels() {
+func ExampleConcurrency_channels() {
 	// Inline functions are just used for viewing with godoc
 	fibonacci := func(n int, c chan int) {
 		x, y := 0, 1

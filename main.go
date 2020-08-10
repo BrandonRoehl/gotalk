@@ -1,5 +1,8 @@
 package gotalk
 
-// GoTalk test for go doc
-func GoTalk() {
-}
+type (
+	// Concurrency section
+	Concurrency interface{}
+	// Errors section
+	Errors interface{}
+)
